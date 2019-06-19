@@ -6,4 +6,7 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: `无处不在，传情答意`,
+  },
 }
