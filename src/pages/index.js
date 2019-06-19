@@ -1,11 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
 
 export default ({ data }) => (
-  <div style={{ margin: `3rem auto`, maxWidth: 600 }}>
+  <Layout>
     <h1>{data.site.siteMetadata.title}</h1>
     <div>Hello world? </div>
-  </div>
+  </Layout>
 )
 
 export const query = graphql`
