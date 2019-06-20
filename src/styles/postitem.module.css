@@ -1,0 +1,26 @@
+.container {
+  margin: 40px 0;
+  list-style: none;
+}
+
+.item {
+  padding: 20px;
+}
+
+.item:hover {
+  cursor: pointer;
+  background-color: lightgoldenrodyellow;
+}
+
+.item h3 {
+  margin-top: 10px;
+}
+
+.item p {
+  font-size: 18px;
+}
+
+.item div {
+  font-size: 18px;
+  color: lightslategray;
+}
