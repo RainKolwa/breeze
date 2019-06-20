@@ -1,6 +1,7 @@
 import React from "react"
-import Layout from "../components/layout"
+import { Helmet } from "react-helmet"
 import { graphql, navigate } from "gatsby"
+import Layout from "../components/layout"
 import styles from "../styles/postitem.module.css"
 
 const PostItem = ({ data, onClick }) => {
@@ -16,6 +17,10 @@ const PostItem = ({ data, onClick }) => {
 export default ({ data }) => {
   return (
     <Layout>
+      <Helmet>
+        <title>Monte Cristo</title>
+        <meta name="description" content="基督山伯爵" />
+      </Helmet>
       <ul className={styles.container}>
         {data.allMarkdownRemark.nodes.map(post => (
           <PostItem
