@@ -1,3 +1,23 @@
-body {
-  background-color: #f5f5f5;
+/* Tomorrow Night Bright
+#000000 Background
+#2a2a2a Current Line
+#424242 Selection
+#eaeaea Foreground
+#969896 Comment
+#d54e53 Red
+#e78c45 Orange
+#e7c547 Yellow
+#b9ca4a Green
+#70c0b1 Aqua
+#7aa6da Blue
+#c397d8 Purple 
+*/
+.gatsby-highlight-code-line {
+  background-color: #424242;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #969896;
 }

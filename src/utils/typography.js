@@ -1,7 +1,12 @@
-import Typography from "typography"
-import fairyGateTheme from "typography-theme-fairy-gates"
+import Typography from 'typography'
+import CodePlugin from 'typography-plugin-code'
+import oceanBeachTheme from 'typography-theme-ocean-beach'
 
-const typography = new Typography(fairyGateTheme)
+oceanBeachTheme.baseFontFamily = ['lucida grande', 'lucida sans unicode', 'lucida', 'helvetica', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'sans-serif']
+oceanBeachTheme.plugins = [
+  new CodePlugin()
+]
+const typography = new Typography(oceanBeachTheme)
 
 export const { scale, rhythm, options } = typography
 export default typography
