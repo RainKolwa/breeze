@@ -17,23 +17,18 @@ tags:
 ### iview 按需加载
 
 1.安装插件
-```
-yarn add babel-plugin-import -D
+```yarn add babel-plugin-import -D
 // npm install babel-plugin-import --save-dev
-```
-2..babelrc中的plugins参数中增加
-```
-[
+```2..babelrc中的plugins参数中增加
+```[
   "import",
   {
     "libraryName": "iview",
     "libraryDirectory": "src/components"
   }
 ]
-```
-3.入口文件main.js
-```
-// 引入用到的组件
+```3.入口文件main.js
+```// 引入用到的组件
 import { Button, Table, Icon, Row, Col, Menu, MenuItem, Submenu, Spin, DatePicker, TimePicker, Input, Progress, Breadcrumb, BreadcrumbItem, ColorPicker, Form, FormItem, Upload, Select, Option, Modal, Page, CheckboxGroup, Checkbox, Poptip, Avatar, Message } from 'iview'
 
 // 注册组件
@@ -44,41 +39,33 @@ Vue.component('Avatar', Avatar)
 // 注册全局函数
 Vue.prototype.$Message = Message
 
-```
-> [官方文档](https://www.iviewui.com/docs/guide/start#%E6%8C%89%E9%9C%80%E5%BC%95%E7%94%A8)
+```> [官方文档](https://www.iviewui.com/docs/guide/start#%E6%8C%89%E9%9C%80%E5%BC%95%E7%94%A8)
 
 
 ### lodash 按需加载
 这个网上教程很多了，这里就不再赘述
-```
-// 别这样
+```// 别这样
 import _ from 'lodash'
 // 要这样
 import assign from 'lodash/assign'
 ```
 
-
 ### moment 只引入需要的语言
 因为webpack解析的问题，当我们使用`import 'moment/locale/zh-cn'`时，webpack会默认加载整个`moment/locale/`目录
 webpack配置文件中的module参数中增加：
-```
-module: {
+```module: {
   ...
   noParse: [/moment.js/]
 }
-```
-关于noParse的说明，可以看[这里](https://doc.webpack-china.org/configuration/module/#module-noparse)
-```
-import moment from 'moment'
+```关于noParse的说明，可以看[这里](https://doc.webpack-china.org/configuration/module/#module-noparse)
+```import moment from 'moment'
 import 'moment/locale/zh-cn'
 
 moment.locale('zh-cn')
 ```
-
 ### 路由懒加载
 修改路由配置
-```
-// view函数接收文件名称
+```// view函数接收文件名称
 const view = name => () => import(`../views/${name}`)
 
 const router = new Router({
@@ -91,10 +78,8 @@ const router = new Router({
     }
   ]
 })
-```
-设置了懒加载后，打包的文件会变成这样：
-```
-static/js/0.38cdf8708ea1c69ccb23.js    21.9 kB       0  [emitted]         vendor-async
+```设置了懒加载后，打包的文件会变成这样：
+```static/js/0.38cdf8708ea1c69ccb23.js    21.9 kB       0  [emitted]         vendor-async
 static/js/1.b88b0c6577465cefe081.js     213 kB       1  [emitted]
 static/js/2.5118df0982cf0c447000.js    4.67 kB       2  [emitted]
 static/js/3.311e01d3b5504c3a493c.js    25.9 kB       3  [emitted]
@@ -103,7 +88,6 @@ static/js/5.e5ab3b5317c9e13c55f7.js    4.58 kB       5  [emitted]
 static/js/6.9197ab16ab0ffbdcdf60.js    3.52 kB       6  [emitted]
 static/js/7.dfea99f77a7721726a8b.js       3 kB       7  [emitted]
 ```
-
 经过上述四个步骤后，vendor文件的大小从1M降到了412 kB  
 
 | Lodash  | Moment   | Iview    |

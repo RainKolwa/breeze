@@ -6,10 +6,8 @@ date: "2019-06-20 13:00"
 ## This is an article to test code format.
 
 ### default
+```console.log('Default.')
 ```
-console.log('Default.')
-```
-
 ### inline
 I would like a cup of `COFFEE` for now.
 
@@ -19,7 +17,6 @@ function hello (name) {
   console.log(`Hello, ${name}!`)
 }
 ```
-
 ### 中文字体
 
 ```javascript{1,4-6}
