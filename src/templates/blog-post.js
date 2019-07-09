@@ -20,7 +20,7 @@ export const query = graphql`
       html
       id
       frontmatter {
-        date(locale: "")
+        date(formatString: "YYYY/MM/DD HH:mm")
         title
       }
     }
