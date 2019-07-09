@@ -2,7 +2,15 @@ import Typography from 'typography'
 import CodePlugin from 'typography-plugin-code'
 import oceanBeachTheme from 'typography-theme-ocean-beach'
 
-oceanBeachTheme.baseFontFamily = ['lucida grande', 'lucida sans unicode', 'lucida', 'helvetica', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'sans-serif']
+const FAMILY = ['PingFang SC', 'Helvetica Neue', 'Microsoft YaHei', '微软雅黑', 'Helvetica', 'Arial', 'sans-serif']
+
+oceanBeachTheme.bodyFontFamily = FAMILY
+oceanBeachTheme.headerFontFamily = FAMILY
+// oceanBeachTheme.overrideThemeStyles = ({ rhythm }, options, styles) => ({
+//   'h2,h3': {
+//     color: 'red'
+//   }
+// })
 oceanBeachTheme.plugins = [
   new CodePlugin()
 ]

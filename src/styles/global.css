@@ -1,16 +1,16 @@
 /* Tomorrow Night Bright
-#000000 Background
-#2a2a2a Current Line
-#424242 Selection
-#eaeaea Foreground
-#969896 Comment
-#d54e53 Red
-#e78c45 Orange
-#e7c547 Yellow
-#b9ca4a Green
-#70c0b1 Aqua
-#7aa6da Blue
-#c397d8 Purple 
+  #000000 Background
+  #2a2a2a Current Line
+  #424242 Selection
+  #eaeaea Foreground
+  #969896 Comment
+  #d54e53 Red
+  #e78c45 Orange
+  #e7c547 Yellow
+  #b9ca4a Green
+  #70c0b1 Aqua
+  #7aa6da Blue
+  #c397d8 Purple 
 */
 .gatsby-highlight-code-line {
   background-color: #424242;
@@ -20,4 +20,10 @@
   padding-right: 1em;
   padding-left: 0.75em;
   border-left: 0.25em solid #969896;
+}
+
+/* rewrite code font-family */
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: "Fira Code", "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", "monospace" !important
 }

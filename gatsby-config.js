@@ -13,7 +13,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`
+        pathToConfigModule: `${__dirname}/src/utils/typography`,
+        omitGoogleFont: true
       }
     },
     {
