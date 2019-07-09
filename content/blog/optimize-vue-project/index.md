@@ -1,8 +1,9 @@
 ---
-title: vue-cli+iview项目打包大小优化
+title: Vue项目打包大小优化
 date: 2018-03-04 14:45:53
 tags:
-- vue
+- Vue
+- Javascript
 ---
 
 最近用vue-cli+iview做了一个项目，打包后发现vendor文件竟然超过了1M，惊了。于是就通过一下四个步骤优化了下。
