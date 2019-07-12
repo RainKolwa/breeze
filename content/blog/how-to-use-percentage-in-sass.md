@@ -1,9 +1,11 @@
 ---
-title: How to use percentage in sass
-id: 138
+title: Sass中如何使用百分数？
 date: 2015-01-19 17:37:34
 tags:
+  - CSS
+  - Sass
 ---
 
-<pre class="lang:default decode:true ">width: percentage(1/6);</pre>
-&nbsp;
+```sass
+width: percentage(1/6);
+```
