@@ -1,13 +1,12 @@
 ---
-title: npm 速度慢
-id: 214
-categories:
-  - Magento
+title: node-sass安装失败，NPM速度慢？
 date: 2015-11-13 21:35:16
 tags:
+  - npm
+  - cnpm
 ---
 
-NPM有时下载指定的包会异常的蛮，比如node-sass等，怎么办呢？
+NPM有时下载指定的包会异常的慢，比如node-sass等，怎么办呢？
 
 可以通过指定淘宝源来提速！
 
