@@ -15,7 +15,7 @@ mp3wrap ../我是新文件.mp3 ./*.mp3
 ### 首先apt-get是什么？
 > 高级打包工具（英语：Advanced Packaging Tools，缩写为APT）是Debian及其派生的Linux软件包管理器。
 
-意思是应该跟 `npm install` 差不多吧。
+意思是应该跟 `npm` 差不多吧。
 
 ### 然后mp3wrap是什么？
 > Mp3Wrap  is  a  free  command-line utility, which wraps two or more mp3 files in one large playable file, without losing filename and ID3 information.

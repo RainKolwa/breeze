@@ -1,18 +1,18 @@
 ---
-title: javascript how to disable mouse wheel
-id: 88
-categories:
-  - Magento
+title: 如何使用JS禁止鼠标滚轮事件
 date: 2014-12-07 02:29:28
 tags:
+  - Javascript
 ---
 
-<pre class="lang:default decode:true ">function disabledMouseWheel() {
+```js
+function disabledMouseWheel() {
   if (document.addEventListener) {
     document.addEventListener('DOMMouseScroll', scrollFunc, false);
-  }//W3C
-  window.onmousewheel = document.onmousewheel = scrollFunc;//IE/Opera/Chrome
+  }
+  window.onmousewheel = document.onmousewheel = scrollFunc;
 }
+
 function scrollFunc(evt) {
   evt = evt || window.event;
     if(evt.preventDefault) {
@@ -26,5 +26,7 @@ function scrollFunc(evt) {
   }
   return false;
 }
-window.onload=disabledMouseWheel;</pre>
-&nbsp;
+
+window.onload = disabledMouseWheel;
+```
+
