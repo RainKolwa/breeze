@@ -3,7 +3,7 @@ title: Webpack Path must be a string. Received undefined
 date: 2016-06-02 18:30:52
 tags:
   - Javascript
-  - webpack
+  - Webpack
 ---
 
 最近在使用webpack的过程中报了这个错误，翻了一下资料发现可以过通过升级babel-core来解决。

@@ -6,6 +6,16 @@ const FAMILY = ['PingFang SC', 'Helvetica Neue', 'Microsoft YaHei', '微软雅�
 
 oceanBeachTheme.bodyFontFamily = FAMILY
 oceanBeachTheme.headerFontFamily = FAMILY
+oceanBeachTheme.overrideStyles = ({ adjustFontSizeTo, scale, rhythm }, options) => {
+  const linkColor = '#70c0b1'
+  return {
+    a: {
+      color: linkColor,
+      textDecoration: 'none',
+      textShadow: 'none'
+    }
+  }
+}
 // oceanBeachTheme.overrideThemeStyles = ({ rhythm }, options, styles) => ({
 //   'h2,h3': {
 //     color: 'red'

@@ -1,0 +1,19 @@
+.tags {
+  display: flex;
+  margin: 0;
+}
+
+.tags li {
+  margin-right: 10px;
+  list-style-type: none;
+  background: #000;
+  height: 28px;
+  line-height: 28px;
+  padding: 0 10px;
+  border-radius: 14px;
+  
+}
+
+.tags li a {
+  color: white
+}
