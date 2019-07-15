@@ -4,10 +4,8 @@ import Layout from '../components/layout'
 import styles from '../styles/post.module.css'
 
 export default ({ data }) => {
-  console.log(data)
   const post = data.markdownRemark
   const tags = post.frontmatter.tags || []
-  console.log('tags', tags)
   return (
     <Layout>
       <h1>{post.frontmatter.title}</h1>
