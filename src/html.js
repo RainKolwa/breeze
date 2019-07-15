@@ -12,6 +12,18 @@ export default function HTML (props) {
           content='width=device-width, initial-scale=1, shrink-to-fit=no'
         />
         {props.headComponents}
+        <script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              var adsbygoogle = window.adsbygoogle || [];
+              adsbygoogle.push({
+                google_ad_client: 'ca-pub-8250876673332836',
+                enable_page_level_ads: true
+              });
+                `
+          }}
+        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
