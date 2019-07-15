@@ -8,12 +8,14 @@ export default ({ data }) => {
   const tags = post.frontmatter.tags || []
   return (
     <Layout>
-      <h1>{post.frontmatter.title}</h1>
-      <p>{post.frontmatter.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      <ul className={styles.tags}>
-        {tags.map(tag => <li key={tag}><Link to={`/tags/${tag.toLowerCase()}`}>{tag}</Link></li>)}
-      </ul>
+      <div style={{ padding: `0 15px` }}>
+        <h1>{post.frontmatter.title}</h1>
+        <p>{post.frontmatter.date}</p>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <ul className={styles.tags}>
+          {tags.map(tag => <li key={tag}><Link to={`/tags/${tag.toLowerCase()}`}>{tag}</Link></li>)}
+        </ul>
+      </div>
     </Layout>
   )
 }

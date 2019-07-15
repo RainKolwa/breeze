@@ -21,7 +21,7 @@ export default ({ children }) => {
 
   return (
     <div style={{ margin: `0 auto`, maxWidth: 750 }}>
-      <header style={{ padding: `0 15px` }}>
+      <header style={{ padding: `20px 15px` }}>
         <Link to='/'>{data.site.siteMetadata.title}</Link>
         <ul style={{ listStyle: 'none', float: 'right', overflow: 'hidden' }}>
           <Nav to='/'>主页</Nav>
