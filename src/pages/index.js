@@ -9,8 +9,8 @@ export default ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <title>Monte Cristo</title>
-        <meta name='description' content='基督山伯爵' />
+        <title>YU's blog</title>
+        <meta name='description' content='雨的博客' />
       </Helmet>
       <PostList data={data.allMarkdownRemark.edges} />
     </Layout>

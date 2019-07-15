@@ -1,5 +1,5 @@
 ---
-title: git old mode 100644 new mode 100755
+title: Git old mode 100644 new mode 100755
 date: 2016-05-12 09:14:14
 tags:
   - Git
