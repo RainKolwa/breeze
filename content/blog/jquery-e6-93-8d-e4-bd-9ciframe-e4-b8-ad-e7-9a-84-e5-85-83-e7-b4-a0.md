@@ -1,16 +1,19 @@
 ---
-title: jquery操作iframe中的元素
-id: 168
-categories:
-  - Magento
+title: 用jQuery怎么操作iframe中的元素？
 date: 2015-03-24 09:16:46
 tags:
+  - jQuery
+  - Javascript
 ---
 
-<pre class="lang:default decode:true ">&lt;iframe id='iframe1' height='35' width='35' src='../button.html' frameborder=0&gt;&lt;/iframe&gt;</pre>
+```html
+<iframe id='demo' height='35' width='35' src='../button.html' frameborder=0></iframe>
+
+```
 &nbsp;
-<pre class="lang:default decode:true  ">$("#iframe1").contents().find("#button").click(function(e){
-    e.preventDefault();
-    //just do it
-});</pre>
-&nbsp;
+```js
+$("#demo").contents().find("#button").click(function(e){
+  e.preventDefault();
+  //just do it
+});
+```

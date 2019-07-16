@@ -1,14 +1,12 @@
 ---
-title: css3心跳
-tags:
-  - css3
-id: 96
-categories:
-  - Magento
+title: 糟了！是心跳的感觉
 date: 2014-12-09 21:53:39
+tags:
+  - CSS
 ---
 
-<pre class="lang:css decode:true ">@keyframes heartbeat{
+```css
+@keyframes heartbeat{
 	0% {
 		transform: scale(1.1);
 	}
@@ -18,5 +16,5 @@ date: 2014-12-09 21:53:39
 	100% {
 		transform: scale(1);
 	}
-}</pre>
-&nbsp;
+}
+```

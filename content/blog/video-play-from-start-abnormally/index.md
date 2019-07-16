@@ -30,5 +30,5 @@ play = time => {
 - 3: 下一帧也加载了
 - 4: 后面好多帧都加载好了
 
-以上请参考[HTMLMediaElement.readyState
-](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readyState)
+#### 参考文档
+- [HTMLMediaElement.readyState](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readyState)
