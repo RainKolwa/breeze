@@ -26,12 +26,11 @@ export default function HTML (props) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              var adsbygoogle = window.adsbygoogle || [];
-              adsbygoogle.push({
-                google_ad_client: 'ca-pub-8250876673332836',
-                enable_page_level_ads: true
-              });
-                `
+            (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8250876673332836",
+              enable_page_level_ads: true
+            });
+            `
           }}
         />
       </head>
