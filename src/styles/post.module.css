@@ -1,6 +1,8 @@
 .tags {
+  width: 100%;
   display: flex;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .tags li {

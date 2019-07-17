@@ -26,7 +26,7 @@ export default ({ children }) => {
         <ul style={{ listStyle: 'none', float: 'right', overflow: 'hidden' }}>
           <Nav to='/'>主页</Nav>
           <Nav to='/about'>关于我</Nav>
-          <Nav to='/tags'>标签</Nav>
+          <Nav to='/tag'>标签</Nav>
         </ul>
       </header>
       {children}
