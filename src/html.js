@@ -22,17 +22,6 @@ export default function HTML (props) {
             gtag('config', 'UA-47040019-1');`
           }}
         />
-        <script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-8250876673332836",
-              enable_page_level_ads: true
-            });
-            `
-          }}
-        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
