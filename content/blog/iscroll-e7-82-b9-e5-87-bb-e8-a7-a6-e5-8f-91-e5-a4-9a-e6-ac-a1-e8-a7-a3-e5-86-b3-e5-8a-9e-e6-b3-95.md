@@ -1,10 +1,8 @@
 ---
 title: iScroll点击触发多次解决办法
-id: 64
-categories:
-  - Magento
 date: 2014-12-02 12:35:15
 tags:
+  - Javascript
 ---
 
 在点击事件中加入如下判断
@@ -17,7 +15,7 @@ click:((/Chrome\/\d/.test(window.navigator.appVersion)) ? true : parseFloat(navi
 
 ## 方法2：
 ```js
-var t1 = null;//设置为全局变量
+var t1 = null;
 if (t1 == null){
 	t1 = new Date().getTime();
 }else{		
