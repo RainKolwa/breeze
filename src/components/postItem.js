@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../styles/postitem.module.styl'
+import styles from '../styles/post.module.styl'
 
 export default ({ data, onClick }) => {
   return (
