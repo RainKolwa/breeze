@@ -10,6 +10,7 @@ module.exports = {
     title: `雨的博客`
   },
   plugins: [
+    `gatsby-plugin-stylus`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

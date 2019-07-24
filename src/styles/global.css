@@ -12,6 +12,9 @@
   #7aa6da Blue
   #c397d8 Purple 
 */
+body, html {
+  background: #fbfbfb;
+}
 .gatsby-highlight-code-line {
   background-color: #424242;
   display: block;

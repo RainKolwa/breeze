@@ -1,7 +1,7 @@
 import React from 'react'
 import PostItem from './postItem'
 import { navigate } from 'gatsby'
-import styles from '../styles/postitem.module.css'
+import styles from '../styles/postitem.module.styl'
 
 const PostList = ({ data }) => {
   return (
