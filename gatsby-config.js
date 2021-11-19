@@ -7,7 +7,7 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `雨的博客`
+    title: `Rainkolwa's personal blog`,
   },
   plugins: [
     `gatsby-plugin-stylus`,
@@ -15,15 +15,15 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `${__dirname}/src/utils/typography`,
-        omitGoogleFont: true
-      }
+        omitGoogleFont: true,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/content/blog`
-      }
+        path: `${__dirname}/content/blog`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -32,8 +32,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 750
-            }
+              maxWidth: 750,
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -48,40 +48,39 @@ module.exports = {
                   language: 'superscript',
                   extend: 'javascript',
                   definition: {
-                    superscript_types: /(SuperType)/
+                    superscript_types: /(SuperType)/,
                   },
                   insertBefore: {
                     function: {
-                      superscript_keywords: /(superif|superelse)/
-                    }
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
+                      superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-tags`,
       options: {
-        templatePath: `${__dirname}/src/templates/tag.js`
-      }
+        templatePath: `${__dirname}/src/templates/tag.js`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `雨的博客`,
-        short_name: `雨的博客`,
+        name: `Blog`,
+        short_name: `Blog`,
         start_url: `/`,
         background_color: `#6b37bf`,
         theme_color: `#6b37bf`,
         display: `standalone`,
-        icon: `src/images/icon.png` // This path is relative to the root of the site.
-      }
-    }
-
-  ]
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+      },
+    },
+  ],
 }
