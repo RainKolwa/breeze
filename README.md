@@ -1,3 +1,4 @@
-# Blog made by Gatsby
+# Blog
 
 - deploy using github actions
+- built with gatsby
