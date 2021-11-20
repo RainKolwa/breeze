@@ -11,9 +11,8 @@ jobs:
     environment: prod
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Deploy
-      uses: fifsky/ssh-action@master
+    - name: deploy via ssh
+      uses: garygrossgarten/github-action-ssh@release
       with:
         command: |
           cd /var/www/breeze
@@ -23,5 +22,5 @@ jobs:
           npm i --production
           npm run build
         host: ${{ secrets.HOST }}
-        user: root
-        key: ${{ secrets.KEY }}
+        username: root
+        privateKey: ${{ secrets.PRIVATE_KEY}}
