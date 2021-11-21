@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
-const Nav = props => {
+const Nav = ({ children, to }) => {
   return (
-    <li style={{ display: 'inline-block', marginLeft: '1rem' }}>
-      <Link to={props.to}>{props.children}</Link>
-    </li>
+    <Link key={to} className="ml-4 hover:text-gray-900" to={to}>
+      {children}
+    </Link>
   )
 }
 export default ({ children }) => {
@@ -20,16 +20,23 @@ export default ({ children }) => {
   `)
 
   return (
-    <div style={{ margin: `0 auto`, maxWidth: 750 }}>
-      <header style={{ padding: `20px 15px` }}>
-        <Link to='/'>{data.site.siteMetadata.title}</Link>
-        <ul style={{ listStyle: 'none', float: 'right', overflow: 'hidden' }}>
-          <Nav to='/'>主页</Nav>
-          <Nav to='/about'>关于我</Nav>
-          <Nav to='/tag'>标签</Nav>
-        </ul>
+    <div className="mx-auto container max-w-3xl">
+      <header className="px-4 py-5 border-b dark:bg-gray-900 dark:border-gray-700">
+        <div className="flex flex-wrap flex-col md:flex-row items-center">
+          <Link
+            to="/"
+            className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+          >
+            <span className="text-xl">{data.site.siteMetadata.title}</span>
+          </Link>
+          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <Nav to="/">主页</Nav>
+            <Nav to="/about">关于我</Nav>
+            <Nav to="/tag">标签</Nav>
+          </nav>
+        </div>
       </header>
-      {children}
+      <div className="px-4">{children}</div>
     </div>
   )
 }

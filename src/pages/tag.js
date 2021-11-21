@@ -1,23 +1,24 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
+import Tag from '../components/tag'
 
 const TagPage = ({ data }) => {
   const { distinct: tags } = data.allMarkdownRemark
   console.log(tags)
   return (
     <Layout>
-      <section style={{ padding: '0 15px' }}>
-        <ul>
+      <section>
+        <div className="flex flex-wrap py-4">
           {tags.map(tag => {
             const styleTag = tag.toLowerCase()
             return (
-              <li key={tag}>
-                <Link to={`/tags/${styleTag}`}>{styleTag}</Link>
-              </li>
+              <div className="mr-4 my-1">
+                <Tag key={tag} label={styleTag} link={`/tags/${styleTag}`} />
+              </div>
             )
           })}
-        </ul>
+        </div>
       </section>
     </Layout>
   )

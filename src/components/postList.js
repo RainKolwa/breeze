@@ -4,7 +4,7 @@ import { navigate } from 'gatsby'
 
 const PostList = ({ data }) => {
   return (
-    <div class="container px-6 py-16 mx-auto">
+    <div class="py-16 mx-auto">
       {data.map(({ node: post }) => (
         <PostItem
           key={post.id}

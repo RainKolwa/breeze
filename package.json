@@ -13,6 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.4.0",
     "gatsby": "^2.9.6",
     "gatsby-plugin-manifest": "^2.2.0",
