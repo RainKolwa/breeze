@@ -9,7 +9,7 @@ export default ({ data }) => {
   const { title, date } = post.frontmatter
   return (
     <Layout>
-      <div className="py-16">
+      <div className="py-8">
         <div className="mx-auto">
           <p className="text-sm font-light text-gray-600 dark:text-gray-400">
             {date}
