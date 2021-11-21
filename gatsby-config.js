@@ -10,14 +10,15 @@ module.exports = {
     title: `Rainkolwa's personal blog`,
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-stylus`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `${__dirname}/src/utils/typography`,
-        omitGoogleFont: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `${__dirname}/src/utils/typography`,
+    //     omitGoogleFont: true,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
