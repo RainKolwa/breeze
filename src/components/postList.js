@@ -4,7 +4,7 @@ import { navigate } from 'gatsby'
 
 const PostList = ({ data }) => {
   return (
-    <div class="py-16 mx-auto">
+    <div className="py-16 mx-auto">
       {data.map(({ node: post }) => (
         <PostItem
           key={post.id}
@@ -12,7 +12,7 @@ const PostList = ({ data }) => {
           onClick={() => navigate(post.fields.slug)}
         />
       ))}
-      <div class="my-8"></div>
+      <div className="my-8"></div>
     </div>
   )
 }

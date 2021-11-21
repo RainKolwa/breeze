@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Tag from '../components/tag'
 
@@ -11,15 +11,15 @@ export default ({ data }) => {
     <Layout>
       <div className="py-16">
         <div className="mx-auto">
-          <p class="text-sm font-light text-gray-600 dark:text-gray-400">
+          <p className="text-sm font-light text-gray-600 dark:text-gray-400">
             {date}
           </p>
-          <h2 class="mt-2 text-xl font-bold text-gray-800 capitalize dark:text-gray-200 sm:text-2xl md:text-3xl">
+          <h2 className="mt-2 text-xl font-bold text-gray-800 capitalize dark:text-gray-200 sm:text-2xl md:text-3xl">
             {title}
           </h2>
           <div className="mt-3">
             {tags.map(tag => (
-              <Tag label={tag} link={`/tags/${tag.toLowerCase()}`} />
+              <Tag key={tag} label={tag} link={`/tags/${tag.toLowerCase()}`} />
             ))}
           </div>
           <article
