@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Layout from '../components/layout'
 
 export default () => (
@@ -11,7 +10,7 @@ export default () => (
           <a
             className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             href="https://github.com/rainkolwa"
           >
             Github
@@ -32,7 +31,7 @@ export default () => (
           <a
             className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             href="https://twitter.com/Rainkolwa"
           >
             Twitter

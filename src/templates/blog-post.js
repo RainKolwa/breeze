@@ -19,7 +19,12 @@ export default ({ data }) => {
           </h2>
           <div className="mt-3">
             {tags.map(tag => (
-              <Tag key={tag} label={tag} link={`/tags/${tag.toLowerCase()}`} />
+              <Tag
+                className="mr-4"
+                key={tag}
+                label={tag}
+                link={`/tags/${tag.toLowerCase()}`}
+              />
             ))}
           </div>
           <article
