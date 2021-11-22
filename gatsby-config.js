@@ -12,13 +12,15 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-stylus`,
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `${__dirname}/src/utils/typography`,
-    //     omitGoogleFont: true,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        // Defaults used for gatsbyImageData and StaticImage
+        defaults: {},
+        // Set to false to allow builds to continue on image errors
+        failOnError: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
