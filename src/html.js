@@ -12,16 +12,16 @@ export default function HTML (props) {
           content='width=device-width, initial-scale=1, shrink-to-fit=no'
         />
         {props.headComponents}
-        <script async src='https://www.googletagmanager.com/gtag/js?id=UA-47040019-1' />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-47040019-1');`
-          }}
-        />
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?81431c4d1dbcd9b15cef163e474857d7";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
