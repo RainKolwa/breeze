@@ -1,11 +1,10 @@
 import React from 'react'
 import PostItem from './postItem'
 import { navigate } from 'gatsby'
-import styles from '../styles/post.module.styl'
 
 const PostList = ({ data }) => {
   return (
-    <ul className={styles.container}>
+    <div className="py-8 mx-auto">
       {data.map(({ node: post }) => (
         <PostItem
           key={post.id}
@@ -13,7 +12,8 @@ const PostList = ({ data }) => {
           onClick={() => navigate(post.fields.slug)}
         />
       ))}
-    </ul>
+      <div className="my-8"></div>
+    </div>
   )
 }
 

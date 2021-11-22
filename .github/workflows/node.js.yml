@@ -1,0 +1,26 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    environment: prod
+
+    steps:
+    - name: deploy via ssh
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        command: |
+          cd /var/www/breeze
+          git pull origin master
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+          npm i --production
+          npm run build
+        host: ${{ secrets.HOST }}
+        username: root
+        privateKey: ${{ secrets.PRIVATE_KEY}}

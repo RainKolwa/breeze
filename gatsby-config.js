@@ -7,17 +7,18 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Rainkolwa's personal blog`,
+    title: `B,LOG`,
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-stylus`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `${__dirname}/src/utils/typography`,
-        omitGoogleFont: true,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `${__dirname}/src/utils/typography`,
+    //     omitGoogleFont: true,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
