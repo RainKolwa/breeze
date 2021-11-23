@@ -1,12 +1,13 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import Tag from '../components/tag'
 
-export default ({ data }) => {
+export default ({ data, pageContext }) => {
   const post = data.markdownRemark
   const tags = post.frontmatter.tags || []
   const { title, date } = post.frontmatter
+  const { previous, next } = pageContext
   return (
     <Layout>
       <div className="py-8">
@@ -31,6 +32,30 @@ export default ({ data }) => {
             className="mt-8 prose dark:prose-dark prose-teal lg:prose-lg 2xl:prose-xl"
             dangerouslySetInnerHTML={{ __html: post.html }}
           ></article>
+          <ul class="mt-4 flex flex-wrap justify-between list-none p-0">
+            <li>
+              {previous && (
+                <Link
+                  to={previous.fields.slug}
+                  rel="prev"
+                  className="hover:underline hover:text-blue-500"
+                >
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link
+                  to={next.fields.slug}
+                  rel="next"
+                  className="hover:underline hover:text-blue-500"
+                >
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
         </div>
       </div>
     </Layout>
