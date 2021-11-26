@@ -15,13 +15,13 @@ export default ({ data, pageContext }) => {
           <p className="text-sm font-light text-gray-600 dark:text-gray-400">
             {date}
           </p>
-          <h2 className="mt-2 text-xl font-bold text-gray-800 capitalize dark:text-gray-200 sm:text-2xl md:text-3xl">
+          <h2 className="mt-2 text-xl font-bold text-gray-800 dark:text-gray-200 sm:text-2xl md:text-3xl">
             {title}
           </h2>
           <div className="mt-3">
             {tags.map(tag => (
               <Tag
-                className="mr-4"
+                className="mr-2"
                 key={tag}
                 label={tag}
                 link={`/tags/${tag.toLowerCase()}`}

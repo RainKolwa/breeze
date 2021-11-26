@@ -8,7 +8,7 @@ export default ({ data, onClick }) => {
       </p>
       <button
         onClick={onClick}
-        className="block mt-2 text-xl font-bold text-gray-800 capitalize dark:text-gray-200 sm:text-2xl md:text-3xl hover:underline hover:text-blue-500"
+        className="block text-left mt-2 text-xl font-bold text-gray-800 dark:text-gray-200 sm:text-2xl md:text-3xl hover:underline hover:text-blue-500"
       >
         {data.frontmatter.title}
       </button>
