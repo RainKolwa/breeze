@@ -32,13 +32,13 @@ export default ({ data, pageContext }) => {
             className="mt-8 prose dark:prose-dark prose-teal lg:prose-lg 2xl:prose-xl"
             dangerouslySetInnerHTML={{ __html: post.html }}
           ></article>
-          <ul class="mt-4 flex flex-wrap justify-between list-none p-0">
+          <ul className="mt-12 border-t-2 p-0 pt-5 flex flex-wrap justify-between list-none">
             <li>
               {previous && (
                 <Link
                   to={previous.fields.slug}
                   rel="prev"
-                  className="hover:underline hover:text-blue-500"
+                  className="text-gray-600 hover:underline hover:text-blue-500"
                 >
                   ← {previous.frontmatter.title}
                 </Link>
@@ -49,7 +49,7 @@ export default ({ data, pageContext }) => {
                 <Link
                   to={next.fields.slug}
                   rel="next"
-                  className="hover:underline hover:text-blue-500"
+                  className="text-gray-600 hover:underline hover:text-blue-500"
                 >
                   {next.frontmatter.title} →
                 </Link>
