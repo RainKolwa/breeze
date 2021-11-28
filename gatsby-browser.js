@@ -1,9 +1,9 @@
-import './src/styles/theme.css'
-import './src/styles/global.styl'
-import 'prismjs/themes/prism-tomorrow.css'
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+require('./src/styles/theme.css')
+require('./src/styles/global.styl')
+require('prismjs/themes/prism-tomorrow.css')
+require('prismjs/plugins/line-numbers/prism-line-numbers.css')
 
-export const onRouteUpdate = function({ location }) {
+exports.onRouteUpdate = ({ location }) => {
   if (
     process.env.NODE_ENV === `production` &&
     typeof window._hmt === `function`
