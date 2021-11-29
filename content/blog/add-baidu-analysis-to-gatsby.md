@@ -67,7 +67,7 @@ exports.onRouteUpdate = ({ location }) => {
 
 3. 然后重新发布代码还是无效，发现部署成功，但是文件没更新。
 
-4. 然后又发现github actions中配置的cp 命令实际上是没生效的。之前写的是`cp ./public ./dist`，首次部署没有问题，但是如果已经有dist文件夹，public文件夹会被发布到dist/public下。。
+4. 然后又发现github actions中配置的cp 命令实际上是没生效的。之前写的是`cp -r ./public ./dist`，首次部署没有问题，但是如果已经有dist文件夹，public文件夹会被发布到dist/public下。。
 
 真是曲折，20分钟已经没了。
 

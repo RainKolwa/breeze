@@ -6,24 +6,24 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     environment: prod
 
     steps:
-    - name: deploy via ssh
-      uses: garygrossgarten/github-action-ssh@release
-      with:
-        command: |
-          cd /var/www/breeze
-          rm -rf ./public/
-          git checkout .
-          git pull origin master
-          export NVM_DIR="$HOME/.nvm"
-          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-          npm install --production --registry=https://registry.npm.taobao.org
-          npm run build
-          cp -r ./public/ ./dist
-        host: ${{ secrets.HOST }}
-        username: root
-        privateKey: ${{ secrets.PRIVATE_KEY}}
+      - name: deploy via ssh
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: |
+            cd /var/www/breeze
+            rm -rf ./public
+            git checkout .
+            git pull origin master
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            npm install --production --registry=https://registry.npm.taobao.org
+            npm run build
+            rm -rf ./dist
+            mv ./public ./dist
+          host: ${{ secrets.HOST }}
+          username: root
+          privateKey: ${{ secrets.PRIVATE_KEY}}
