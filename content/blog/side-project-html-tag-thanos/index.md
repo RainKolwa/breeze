@@ -8,11 +8,11 @@ tags:
 
 ---
 
-最近打算重复造轮子。准备增加一个域名：[名字还没想好](https://tools.rainlee.net)，里面专门放一些自己写的小工具。第一个已经想好了，用于移除HTML标签。
+最近打算重复造轮子。准备增加一个域名：[名字还没想好](https://tools.rainlee.fun)，里面专门放一些自己写的小工具。第一个已经想好了，用于移除HTML标签。
 
 ### html-tag-thanos
 
-项目名称：html-tag-thanos，不过不打算独立一个项目，小工具都统一放在[toolkit](https://github.com/RainKolwa/toolkit)中。这个项目使用到的技术：
+项目名称：html-tag-thanos，不过不打算独立一个项目，小工具都统一放在 [Toolkit](https://github.com/RainKolwa/toolkit) 中。这个项目使用到的技术：
 
 1. build tool: [vite](https://vitejs.dev/)
 2. framework: vue3
@@ -45,7 +45,7 @@ content.replace(/<style.*?>.*?<\/style>/gm, "")
 
 关于自动部署
 
-通过github actions实现自动打包，我用的是一个[rsync](https://github.com/Burnett01/rsync-deployments)的action来将同步到服务器。每次我提交代码，push到master，部署的脚本就会自动执行。添加了注释说的workflow配置如下：
+通过github actions实现自动打包，我用的是一个[rsync](https://github.com/Burnett01/rsync-deployments)的action来将打包产物同步到服务器。每次我提交代码，push到master，部署的脚本就会自动执行。添加了注释说明的workflow配置如下：
 
 ```yaml
 name: Node.js CI
