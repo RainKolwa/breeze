@@ -2,7 +2,7 @@
 title: 用Telegram Bot来获取班车信息
 date: 2021-12-03 19:14:41
 tags:
-  - Node.js
+  - Nodejs
   - Tool
 ---
 
