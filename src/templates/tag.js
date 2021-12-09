@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
+import Tag from '../components/tag'
 import Layout from '../components/layout'
 import PostList from '../components/postList'
 
@@ -10,7 +10,7 @@ const CategoryTemplate = ({ location, pageContext, data }) => {
   return (
     <Layout location={location} title={`Posts in tag "${tag}"`}>
       <div className='tag-container'>
-        <h1>Tag: {tag}</h1>
+        <div className='flex flex-wrap pt-6'>标签：<Tag label={tag} /></div>
         <PostList data={data.allMarkdownRemark.edges} />
       </div>
     </Layout>
