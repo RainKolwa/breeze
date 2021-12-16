@@ -5,9 +5,8 @@
  */
 
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
-    title: `B,LOG`,
+    title: "CONSOLE.LOG",
   },
   plugins: [
     `gatsby-plugin-postcss`,

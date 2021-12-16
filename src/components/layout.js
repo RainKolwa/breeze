@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 
 const Nav = ({ children, to }) => {
   return (
-    <Link key={to} className="ml-4 hover:text-gray-900" to={to}>
+    <Link key={to} className="ml-4 uppercase hover:text-gray-900" to={to}>
       {children}
     </Link>
   )
@@ -30,9 +30,10 @@ export default ({ children }) => {
             <span className="text-xl">{data.site.siteMetadata.title}</span>
           </Link>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <Nav to="/">主页</Nav>
-            <Nav to="/about">关于我</Nav>
-            <Nav to="/tag">标签</Nav>
+            <Nav to="/">Blog</Nav>
+            <Nav to="/about">About</Nav>
+            <Nav to="https://tools.rainlee.fun">Toolkit</Nav>
+            <Nav to="/tag">Tag</Nav>
           </nav>
         </div>
       </header>
