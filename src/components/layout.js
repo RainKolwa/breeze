@@ -30,10 +30,10 @@ export default ({ children }) => {
             <span className="text-xl">{data.site.siteMetadata.title}</span>
           </Link>
           <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <Nav to="/">Blog</Nav>
+            <Nav to="https://tools.rainlee.fun">Toolkits</Nav>
             <Nav to="/about">About</Nav>
-            <Nav to="https://tools.rainlee.fun">Toolkit</Nav>
-            <Nav to="/tag">Tag</Nav>
+            <Nav to="/tag">Tags</Nav>
+            <Nav to="/link">Links</Nav>
           </nav>
         </div>
       </header>

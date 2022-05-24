@@ -5,7 +5,6 @@ import Tag from '../components/tag'
 
 const TagPage = ({ data }) => {
   const { distinct: tags } = data.allMarkdownRemark
-  console.log(tags)
   return (
     <Layout>
       <section>

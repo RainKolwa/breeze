@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "CONSOLE.LOG",
+    title: "Rainkolwa's Blog",
   },
   plugins: [
     `gatsby-plugin-postcss`,

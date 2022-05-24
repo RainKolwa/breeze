@@ -5,12 +5,11 @@ import Layout from '../components/layout'
 import PostList from '../components/postList'
 
 export default ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <Helmet>
-        <title>YU's blog</title>
-        <meta name='description' content='雨的博客' />
+        <title>Rainkolwa's Blog</title>
+        <meta name="description" content="Rainkolwa's Blog" />
       </Helmet>
       <PostList data={data.allMarkdownRemark.edges} />
     </Layout>
