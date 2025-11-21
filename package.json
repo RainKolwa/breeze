@@ -16,7 +16,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "gatsby": "^5.13.3",
     "gatsby-plugin-manifest": "^5.13.1",
-    "gatsby-plugin-offline": "^6.13.1",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-postcss": "^6.13.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
