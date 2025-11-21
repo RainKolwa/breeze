@@ -1,6 +1,24 @@
 body, html {
-  background: #fbfbfb;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+:root {
+  --bg-color: #fbfbfb;
+  --text-color: #2d3748;
+}
+
+.dark {
+  --bg-color: #111827; /* gray-900 */
+  --text-color: #f3f4f6; /* gray-100 */
+}
+
+html.dark body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
 .gatsby-highlight-code-line {
   background-color: #424242;
   display: block;
@@ -15,4 +33,30 @@ body, html {
 code[class*="language-"],
 pre[class*="language-"] {
   font-family: "Fira Code", "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", "monospace" !important
+}
+
+/* Dark Mode Prose Overrides */
+.dark .prose {
+  color: #d1d5db;
+}
+.dark .prose h1,
+.dark .prose h2,
+.dark .prose h3,
+.dark .prose h4,
+.dark .prose h5,
+.dark .prose h6 {
+  color: #f9fafb;
+}
+.dark .prose strong {
+  color: #f9fafb;
+}
+.dark .prose a {
+  color: #60a5fa;
+}
+.dark .prose blockquote {
+  color: #9ca3af;
+  border-left-color: #4b5563;
+}
+.dark .prose code {
+  color: #e5e7eb;
 }
