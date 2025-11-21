@@ -1,7 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Tag = ({ label, link, ...props }) => {
+const Tag = ({
+  label,
+  link,
+  ...props
+}: {
+  label: string
+  link: string
+  [key: string]: any
+}) => {
   return (
     <div
       {...props}

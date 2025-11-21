@@ -3,14 +3,31 @@ import { graphql } from 'gatsby'
 import Tag from '../components/tag'
 import Layout from '../components/layout'
 import PostList from '../components/postList'
+import { Post } from '../types'
 
-const CategoryTemplate = ({ location, pageContext, data }) => {
+interface CategoryTemplateProps {
+  pageContext: {
+    tag: string
+  }
+  data: {
+    allMarkdownRemark: {
+      totalCount: number
+      edges: { node: Post }[]
+    }
+  }
+  location: {
+    pathname: string
+  }
+}
+
+const CategoryTemplate = ({ pageContext, data }: CategoryTemplateProps) => {
   const { tag } = pageContext
-  console.log(data.allMarkdownRemark.edges)
   return (
-    <Layout location={location} title={`Posts in tag "${tag}"`}>
-      <div className='tag-container'>
-        <div className='flex flex-wrap pt-6'>标签：<Tag label={tag} /></div>
+    <Layout>
+      <div className="tag-container">
+        <div className="flex flex-wrap pt-6">
+          标签：<Tag label={tag} link={`/tags/${tag.toLowerCase()}`} />
+        </div>
         <PostList data={data.allMarkdownRemark.edges} />
       </div>
     </Layout>

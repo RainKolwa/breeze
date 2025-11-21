@@ -1,10 +1,19 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import Layout from '../components/layout'
 import PostList from '../components/postList'
+import { Post } from '../types'
 
-export default ({ data }) => {
+interface IndexPageProps {
+  data: {
+    allMarkdownRemark: {
+      edges: { node: Post }[]
+    }
+  }
+}
+
+export default ({ data }: IndexPageProps) => {
   return (
     <Layout>
       <Helmet>
@@ -46,3 +55,4 @@ export const query = graphql`
     }
   }
 `
+

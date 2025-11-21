@@ -3,7 +3,15 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Tag from '../components/tag'
 
-const TagPage = ({ data }) => {
+interface TagPageProps {
+  data: {
+    allMarkdownRemark: {
+      distinct: string[]
+    }
+  }
+}
+
+const TagPage = ({ data }: TagPageProps) => {
   const { distinct: tags } = data.allMarkdownRemark
   return (
     <Layout>

@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
-const Nav = ({ children, to }) => {
+const Nav = ({ children, to }: { children: React.ReactNode; to: string }) => {
   return (
     <Link key={to} className="ml-4 uppercase hover:text-gray-900" to={to}>
       {children}
     </Link>
   )
 }
-export default ({ children }) => {
+export default ({ children }: { children: React.ReactNode }) => {
   const data = useStaticQuery(graphql`
     query {
       site {

@@ -9,6 +9,7 @@ module.exports = {
     title: "Rainkolwa's Blog",
   },
   plugins: [
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-stylus`,
     {
@@ -69,7 +70,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-tags`,
       options: {
-        templatePath: `${__dirname}/src/templates/tag.js`,
+        templatePath: `${__dirname}/src/templates/tag.tsx`,
       },
     },
     {

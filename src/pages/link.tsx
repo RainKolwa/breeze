@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 
-const links = [{ title: '卡拉云低代码工具', href: 'https://kalacloud.com' }]
+const links = []
 
 export default () => (
   <Layout>

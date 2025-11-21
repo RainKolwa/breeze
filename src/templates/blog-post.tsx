@@ -3,7 +3,40 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import Tag from '../components/tag'
 
-export default ({ data, pageContext }) => {
+interface BlogPostTemplateProps {
+  data: {
+    markdownRemark: {
+      html: string
+      id: string
+      frontmatter: {
+        date: string
+        title: string
+        tags: string[]
+      }
+      timeToRead: number
+    }
+  }
+  pageContext: {
+    previous: {
+      fields: {
+        slug: string
+      }
+      frontmatter: {
+        title: string
+      }
+    }
+    next: {
+      fields: {
+        slug: string
+      }
+      frontmatter: {
+        title: string
+      }
+    }
+  }
+}
+
+export default ({ data, pageContext }: BlogPostTemplateProps) => {
   const post = data.markdownRemark
   const tags = post.frontmatter.tags || []
   const { title, date } = post.frontmatter
@@ -76,3 +109,4 @@ export const query = graphql`
     }
   }
 `
+

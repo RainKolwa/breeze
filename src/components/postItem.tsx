@@ -1,6 +1,13 @@
 import React from 'react'
+import { Post } from '../types'
 
-export default ({ data, onClick }) => {
+export default ({
+  data,
+  onClick,
+}: {
+  data: Post
+  onClick: () => void
+}) => {
   return (
     <div className="mx-auto mb-10">
       <p className="text-sm font-light text-gray-600 dark:text-gray-400">
@@ -16,3 +23,5 @@ export default ({ data, onClick }) => {
     </div>
   )
 }
+
+

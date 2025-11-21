@@ -2,7 +2,9 @@ import React from 'react'
 import PostItem from './postItem'
 import { navigate } from 'gatsby'
 
-const PostList = ({ data }) => {
+import { Post } from '../types'
+
+const PostList = ({ data }: { data: { node: Post }[] }) => {
   return (
     <div className="py-8 mx-auto">
       {data.map(({ node: post }) => (
@@ -18,3 +20,4 @@ const PostList = ({ data }) => {
 }
 
 export default PostList
+
