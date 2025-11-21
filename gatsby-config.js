@@ -43,7 +43,7 @@ module.exports = {
             options: {
               classPrefix: 'language-',
               inlineCodeMarker: null,
-              aliases: {},
+              aliases: { react: 'jsx' },
               showLineNumbers: false,
               noInlineHighlight: false,
               languageExtensions: [

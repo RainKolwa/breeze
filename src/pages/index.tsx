@@ -27,7 +27,7 @@ export default ({ data }: IndexPageProps) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       pageInfo {
         hasNextPage
         currentPage

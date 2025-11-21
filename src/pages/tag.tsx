@@ -48,7 +48,7 @@ const TagPage = ({ data }: TagPageProps) => {
 export const query = graphql`
   query {
     allMarkdownRemark {
-      distinct(field: frontmatter___tags)
+      distinct(field: { frontmatter: { tags: SELECT } })
     }
   }
 `
