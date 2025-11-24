@@ -17,8 +17,8 @@ export default ({ data }: IndexPageProps) => {
   return (
     <Layout>
       <Helmet>
-        <title>Rainkolwa's Blog</title>
-        <meta name="description" content="Rainkolwa's Blog" />
+        <title>R & B</title>
+        <meta name="description" content="R & B" />
       </Helmet>
       <PostList data={data.allMarkdownRemark.edges} />
     </Layout>
@@ -55,4 +55,3 @@ export const query = graphql`
     }
   }
 `
-

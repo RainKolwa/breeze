@@ -13,6 +13,9 @@ interface TagPageProps {
 
 const TagPage = ({ data }: TagPageProps) => {
   const { distinct: tags } = data.allMarkdownRemark
+  const normalizedTags = Array.from(
+    new Set(tags.map(tag => tag.trim().toLowerCase()))
+  ).sort()
   return (
     <Layout>
       <div className="py-12 max-w-4xl mx-auto">
@@ -21,14 +24,14 @@ const TagPage = ({ data }: TagPageProps) => {
             Tags
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Browse all {tags.length} topics
+            Browse all {normalizedTags.length} topics
           </p>
         </header>
 
         <section className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
           <div className="flex flex-wrap gap-3 justify-center">
-            {tags.map(tag => {
-              const styleTag = tag.toLowerCase()
+            {normalizedTags.map(tag => {
+              const styleTag = tag
               return (
                 <Tag
                   key={tag}
