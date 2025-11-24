@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Rainkolwa's Blog",
+    title: 'R & B',
   },
   plugins: [
     `gatsby-plugin-typescript`,

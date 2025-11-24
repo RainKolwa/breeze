@@ -52,10 +52,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </Link>
           <nav className="flex items-center">
             <div className="hidden md:flex items-center">
-              <Nav to="https://tools.rainlee.fun">Toolkits</Nav>
               <Nav to="/about">About</Nav>
               <Nav to="/tag">Tags</Nav>
-              <Nav to="/link">Links</Nav>
+              <Nav to="https://tools.rainlee.fun">Toolkits</Nav>
+              {/* <Nav to="/link">Links</Nav> */}
             </div>
             <button
               onClick={toggleTheme}

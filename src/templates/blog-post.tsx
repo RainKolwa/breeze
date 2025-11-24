@@ -41,56 +41,80 @@ export default ({ data, pageContext }: BlogPostTemplateProps) => {
   const tags = post.frontmatter.tags || []
   const { title, date } = post.frontmatter
   const { previous, next } = pageContext
+  const readingTime = post.timeToRead
   return (
     <Layout>
-      <div className="py-8">
-        <div className="mx-auto">
-          <p className="text-sm font-light text-gray-600 dark:text-gray-400">
-            {date}
-          </p>
-          <h2 className="mt-2 text-xl font-bold text-gray-800 dark:text-gray-200 sm:text-2xl md:text-3xl">
-            {title}
-          </h2>
-          <div className="mt-3">
-            {tags.map(tag => (
-              <Tag
-                className="mr-2"
-                key={tag}
-                label={tag}
-                link={`/tags/${tag.toLowerCase()}`}
-              />
-            ))}
-          </div>
-          <article
-            className="mt-8 prose dark:prose-dark prose-teal lg:prose-lg 2xl:prose-xl"
+      <article className="relative isolate mx-auto max-w-3xl overflow-hidden rounded-2xl border border-gray-200 bg-white/80 shadow-sm backdrop-blur dark:border-gray-800 dark:bg-gray-900/70">
+        <div className="px-5 py-8 sm:px-10 sm:py-10">
+          <header className="space-y-4">
+            <div className="flex flex-wrap items-center gap-3 text-xs font-medium uppercase tracking-wide text-gray-500 dark:text-gray-400">
+              <span>{date}</span>
+              {typeof readingTime === 'number' && readingTime > 0 && (
+                <span className="inline-flex items-center rounded-full border border-gray-200 px-2.5 py-0.5 text-[11px] normal-case dark:border-gray-700">
+                  {readingTime} min read
+                </span>
+              )}
+            </div>
+            <h1 className="text-[1.85rem] font-semibold leading-tight text-gray-900 dark:text-gray-100 sm:text-[2.25rem]">
+              {title}
+            </h1>
+            {tags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {tags.map(tag => (
+                  <Tag
+                    className="text-xs"
+                    key={tag}
+                    label={tag}
+                    link={`/tags/${tag.toLowerCase()}`}
+                  />
+                ))}
+              </div>
+            )}
+          </header>
+          <div
+            className="mt-8 prose prose-slate max-w-none text-base leading-relaxed dark:prose-invert sm:text-[1.02rem] prose-h1:text-2xl prose-h2:text-xl sm:prose-h2:text-[1.35rem] prose-h3:text-lg prose-h4:text-base prose-headings:font-semibold"
             dangerouslySetInnerHTML={{ __html: post.html }}
-          ></article>
-          <ul className="mt-12 border-t-2 p-0 pt-5 flex flex-wrap justify-between list-none">
-            <li>
-              {previous && (
-                <Link
-                  to={previous.fields.slug}
-                  rel="prev"
-                  className="text-gray-600 hover:underline hover:text-blue-500"
-                >
-                  ← {previous.frontmatter.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link
-                  to={next.fields.slug}
-                  rel="next"
-                  className="text-gray-600 hover:underline hover:text-blue-500"
-                >
-                  {next.frontmatter.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
+          ></div>
         </div>
-      </div>
+        <footer className="border-t border-gray-200 bg-gray-50/60 px-5 py-6 text-sm text-gray-600 dark:border-gray-800 dark:bg-gray-900/70 dark:text-gray-300 sm:px-10">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            {previous ? (
+              <Link
+                to={previous.fields.slug}
+                rel="prev"
+                className="group inline-flex items-center gap-2 font-medium hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                <span aria-hidden="true" className="text-lg">
+                  ←
+                </span>
+                <span className="truncate">
+                  {previous.frontmatter.title}
+                </span>
+              </Link>
+            ) : (
+              <span className="text-gray-400 dark:text-gray-600">起点</span>
+            )}
+            {next ? (
+              <Link
+                to={next.fields.slug}
+                rel="next"
+                className="group inline-flex items-center gap-2 font-medium hover:text-blue-600 dark:hover:text-blue-400 sm:justify-end"
+              >
+                <span className="truncate text-right">
+                  {next.frontmatter.title}
+                </span>
+                <span aria-hidden="true" className="text-lg">
+                  →
+                </span>
+              </Link>
+            ) : (
+              <span className="text-gray-400 dark:text-gray-600 text-right">
+                已是最新
+              </span>
+            )}
+          </div>
+        </footer>
+      </article>
     </Layout>
   )
 }
@@ -109,4 +133,3 @@ export const query = graphql`
     }
   }
 `
-
