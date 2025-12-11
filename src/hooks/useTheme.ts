@@ -1,18 +1,19 @@
 import { useState, useEffect } from 'react'
 
-const useTheme = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
-      if (storedTheme) {
-        setTheme(storedTheme)
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setTheme('dark')
-      }
+const getInitialTheme = (): 'light' | 'dark' => {
+  if (typeof window !== 'undefined') {
+    if (document.documentElement.classList.contains('dark')) {
+      return 'dark'
     }
-  }, [])
+    const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
+    if (storedTheme) return storedTheme
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
+  }
+  return 'light'
+}
+
+const useTheme = () => {
+  const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
 
   useEffect(() => {
     if (theme === 'dark') {
