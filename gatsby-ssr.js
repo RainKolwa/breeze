@@ -17,6 +17,15 @@ const ThemeScript = () => {
   })
 }
 
-exports.onRenderBody = ({ setPreBodyComponents }) => {
+exports.onRenderBody = ({ setPreBodyComponents, setPostBodyComponents }) => {
   setPreBodyComponents([React.createElement(ThemeScript, { key: 'theme-script' })])
+  
+  setPostBodyComponents([
+    React.createElement('script', {
+      key: 'cloudflare-analytics',
+      defer: true,
+      src: 'https://static.cloudflareinsights.com/beacon.min.js',
+      'data-cf-beacon': '{"token": "151082918e514eef9af3fb026b1771cf"}',
+    }),
+  ])
 }
