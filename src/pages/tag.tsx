@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Tag from '../components/tag'
+import slugify from 'slug'
 
 interface TagPageProps {
   data: {
@@ -14,7 +15,7 @@ interface TagPageProps {
 const TagPage = ({ data }: TagPageProps) => {
   const { distinct: tags } = data.allMarkdownRemark
   const normalizedTags = Array.from(
-    new Set(tags.map(tag => tag.trim().toLowerCase()))
+    new Set(tags.map((tag) => tag.trim().toLowerCase()))
   ).sort()
   return (
     <Layout>
@@ -30,13 +31,12 @@ const TagPage = ({ data }: TagPageProps) => {
 
         <section className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-700">
           <div className="flex flex-wrap gap-3 justify-center">
-            {normalizedTags.map(tag => {
-              const styleTag = tag
+            {normalizedTags.map((tag) => {
               return (
                 <Tag
                   key={tag}
-                  label={styleTag}
-                  link={`/tags/${styleTag}`}
+                  label={tag}
+                  link={`/tags/${tag}`}
                   className="text-base px-4 py-2"
                 />
               )

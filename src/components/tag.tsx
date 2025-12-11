@@ -16,9 +16,10 @@ const Tag = ({
     <Link
       to={link}
       className={`
-        inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
-        bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700
-        dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-blue-900 dark:hover:text-blue-300
+        inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border
+        bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700 border-gray-200
+        dark:bg-gray-700/60 dark:text-gray-200 dark:border-gray-600
+        dark:hover:bg-blue-900/40 dark:hover:text-blue-200
         transition-colors duration-200 ease-in-out
         ${className ?? ''}
       `}

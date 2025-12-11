@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import Tag from '../components/tag'
+import slugify from 'slug'
 
 interface BlogPostTemplateProps {
   data: {
@@ -65,7 +66,7 @@ export default ({ data, pageContext }: BlogPostTemplateProps) => {
                     className="text-xs"
                     key={tag}
                     label={tag}
-                    link={`/tags/${tag.toLowerCase()}`}
+                    link={`/tags/${slugify(tag, { lower: true })}`}
                   />
                 ))}
               </div>
