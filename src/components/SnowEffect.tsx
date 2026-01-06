@@ -7,6 +7,8 @@ interface Snowflake {
   speed: number
   drift: number
   opacity: number
+  rotation: number
+  rotationSpeed: number
 }
 
 interface SnowEffectProps {
@@ -18,11 +20,11 @@ interface SnowEffectProps {
 }
 
 const SnowEffect: React.FC<SnowEffectProps> = ({
-  count = 80,
-  maxRadius = 4,
-  minRadius = 1,
-  maxSpeed = 1.5,
-  minSpeed = 0.3,
+  count = 400,
+  maxRadius = 1,
+  minRadius = 0.2,
+  maxSpeed = 5,
+  minSpeed = 1,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const snowflakesRef = useRef<Snowflake[]>([])
@@ -52,6 +54,8 @@ const SnowEffect: React.FC<SnowEffectProps> = ({
       speed: Math.random() * (maxSpeed - minSpeed) + minSpeed,
       drift: Math.random() * 0.5 - 0.25,
       opacity: Math.random() * 0.6 + 0.4,
+      rotation: Math.random() * Math.PI * 2,
+      rotationSpeed: (Math.random() - 0.5) * 0.02,
     })
 
     const initSnowflakes = () => {
@@ -61,6 +65,7 @@ const SnowEffect: React.FC<SnowEffectProps> = ({
     const updateSnowflake = (snowflake: Snowflake) => {
       snowflake.y += snowflake.speed
       snowflake.x += snowflake.drift
+      snowflake.rotation += snowflake.rotationSpeed
 
       if (snowflake.y > canvas.height) {
         snowflake.y = -10
@@ -75,10 +80,11 @@ const SnowEffect: React.FC<SnowEffectProps> = ({
     }
 
     const drawSnowflake = (snowflake: Snowflake) => {
-      const { x, y, radius, opacity } = snowflake
-      
+      const { x, y, radius, opacity, rotation } = snowflake
+
       ctx.save()
       ctx.translate(x, y)
+      ctx.rotate(rotation)
       ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`
       ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`
       ctx.lineWidth = radius * 0.3
@@ -87,7 +93,7 @@ const SnowEffect: React.FC<SnowEffectProps> = ({
       // Draw 6 main branches
       for (let i = 0; i < 6; i++) {
         ctx.rotate(Math.PI / 3)
-        
+
         // Main branch
         ctx.beginPath()
         ctx.moveTo(0, 0)
