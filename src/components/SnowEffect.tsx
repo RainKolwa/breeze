@@ -22,7 +22,7 @@ interface SnowEffectProps {
 }
 
 const SnowEffect: React.FC<SnowEffectProps> = ({
-  count = 200,
+  count = 100,
   maxRadius = 0.8,
   minRadius = 0.1,
   maxSpeed = 3,

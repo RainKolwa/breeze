@@ -1,29 +1,23 @@
 import { useState, useEffect } from 'react'
 
-const getInitialSnowEffect = (): boolean => {
-  if (typeof window !== 'undefined') {
-    const storedSnowEffect = localStorage.getItem('snowEffect')
-    if (storedSnowEffect !== null) {
-      return storedSnowEffect === 'true'
-    }
-  }
-  return false
+const isWinter = (): boolean => {
+  if (typeof window === 'undefined') return false
+  
+  const month = new Date().getMonth() + 1 // getMonth() returns 0-11
+  
+  // Winter months: December (12), January (1), February (2)
+  return month === 12 || month === 1 || month === 2
 }
 
 const useSnowEffect = () => {
-  const [snowEnabled, setSnowEnabled] = useState<boolean>(getInitialSnowEffect)
+  const [snowEnabled, setSnowEnabled] = useState<boolean>(false)
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('snowEffect', String(snowEnabled))
-    }
-  }, [snowEnabled])
+    // Check if it's winter on mount
+    setSnowEnabled(isWinter())
+  }, [])
 
-  const toggleSnow = () => {
-    setSnowEnabled((prev) => !prev)
-  }
-
-  return { snowEnabled, toggleSnow }
+  return { snowEnabled }
 }
 
 export default useSnowEffect

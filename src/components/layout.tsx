@@ -30,7 +30,7 @@ const Nav = ({ children, to }: { children: React.ReactNode; to: string }) => {
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { theme, toggleTheme } = useTheme()
-  const { snowEnabled, toggleSnow } = useSnowEffect()
+  const { snowEnabled } = useSnowEffect()
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -45,7 +45,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      {snowEnabled && <SnowEffect />}
+      {snowEnabled && <SnowEffect windX={1} windY={0} />}
       <header className="sticky top-0 z-50 w-full backdrop-filter backdrop-blur-md bg-white bg-opacity-80 dark:bg-gray-900 dark:bg-opacity-80 border-b border-gray-200 dark:border-gray-700 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link
@@ -62,28 +62,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               {/* <Nav to="/link">Links</Nav> */}
             </div>
             <button
-              onClick={toggleSnow}
-              className="ml-6 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors"
-              aria-label="Toggle Snow Effect"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill={snowEnabled ? 'currentColor' : 'none'}
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"
-                />
-              </svg>
-            </button>
-            <button
               onClick={toggleTheme}
-              className="ml-2 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors"
+              className="ml-6 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none transition-colors"
               aria-label="Toggle Dark Mode"
             >
               {theme === 'dark' ? (
