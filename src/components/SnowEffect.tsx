@@ -75,10 +75,43 @@ const SnowEffect: React.FC<SnowEffectProps> = ({
     }
 
     const drawSnowflake = (snowflake: Snowflake) => {
-      ctx.beginPath()
-      ctx.arc(snowflake.x, snowflake.y, snowflake.radius, 0, Math.PI * 2)
-      ctx.fillStyle = `rgba(255, 255, 255, ${snowflake.opacity})`
-      ctx.fill()
+      const { x, y, radius, opacity } = snowflake
+      
+      ctx.save()
+      ctx.translate(x, y)
+      ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`
+      ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`
+      ctx.lineWidth = radius * 0.3
+      ctx.lineCap = 'round'
+
+      // Draw 6 main branches
+      for (let i = 0; i < 6; i++) {
+        ctx.rotate(Math.PI / 3)
+        
+        // Main branch
+        ctx.beginPath()
+        ctx.moveTo(0, 0)
+        ctx.lineTo(0, -radius * 2)
+        ctx.stroke()
+
+        // Side branches
+        for (let j = 1; j <= 2; j++) {
+          const branchY = -radius * j * 0.7
+          const branchLength = radius * 0.5
+
+          ctx.beginPath()
+          ctx.moveTo(0, branchY)
+          ctx.lineTo(-branchLength, branchY - branchLength * 0.5)
+          ctx.stroke()
+
+          ctx.beginPath()
+          ctx.moveTo(0, branchY)
+          ctx.lineTo(branchLength, branchY - branchLength * 0.5)
+          ctx.stroke()
+        }
+      }
+
+      ctx.restore()
     }
 
     const animate = () => {
