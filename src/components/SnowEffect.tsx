@@ -17,14 +17,18 @@ interface SnowEffectProps {
   minRadius?: number
   maxSpeed?: number
   minSpeed?: number
+  windX?: number
+  windY?: number
 }
 
 const SnowEffect: React.FC<SnowEffectProps> = ({
-  count = 400,
-  maxRadius = 1,
-  minRadius = 0.2,
-  maxSpeed = 5,
-  minSpeed = 1,
+  count = 200,
+  maxRadius = 0.8,
+  minRadius = 0.1,
+  maxSpeed = 3,
+  minSpeed = 0.5,
+  windX = -1,
+  windY = 0,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const snowflakesRef = useRef<Snowflake[]>([])
@@ -63,9 +67,13 @@ const SnowEffect: React.FC<SnowEffectProps> = ({
     }
 
     const updateSnowflake = (snowflake: Snowflake) => {
-      snowflake.y += snowflake.speed
-      snowflake.x += snowflake.drift
-      snowflake.rotation += snowflake.rotationSpeed
+      // Smaller snowflakes are more affected by wind
+      const windEffect =
+        0.5 + ((maxRadius - snowflake.radius) / maxRadius) * 0.5
+
+      snowflake.y += snowflake.speed + windY * windEffect * 2
+      snowflake.x += snowflake.drift + windX * windEffect
+      snowflake.rotation += snowflake.rotationSpeed + windX * 0.03
 
       if (snowflake.y > canvas.height) {
         snowflake.y = -10
@@ -147,7 +155,7 @@ const SnowEffect: React.FC<SnowEffectProps> = ({
         cancelAnimationFrame(animationFrameRef.current)
       }
     }
-  }, [count, maxRadius, minRadius, maxSpeed, minSpeed])
+  }, [count, maxRadius, minRadius, maxSpeed, minSpeed, windX, windY])
 
   return (
     <canvas
